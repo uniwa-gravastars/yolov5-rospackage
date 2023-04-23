@@ -1,9 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
 # YOLOv5 ROS package
 
 <!-- TABLE OF CONTENTS -->
@@ -208,19 +202,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Special thanks to the original author of this work Kaloterakis Evangelos.
 
 <a href="#top">(Back to top)</a>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-url]: https://github.com/uniwa-gravastars/yolov5-rospackage/graphs/contributors
-[forks-url]: https://github.com/uniwa-gravastars/yolov5-rospackage/network/members
-[stars-url]: https://github.com/uniwa-gravastars/yolov5-rospackage/stargazers
-[issues-url]: https://github.com/uniwa-gravastars/yolov5-rospackage/issues
-[license-url]: https://github.com/uniwa-gravastars/yolov5-rospackage/master/LICENSE.txt
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 
 <!-- [product-screenshot]: images/screenshot.png -->
