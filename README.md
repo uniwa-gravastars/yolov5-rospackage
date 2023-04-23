@@ -109,7 +109,7 @@ Then compile the package and source the workspace
 
 ```
 cd ..
-catkin_make
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3
 ```
 
 ## Usage
