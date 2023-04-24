@@ -103,6 +103,9 @@ Clone the repository to your workspace.
 ```
 mkdir -p "yolo_ws/src" && cd $_
 git clone https://github.com/uniwa-gravastars/yolov5-rospackage.git
+cd yolov5-rospackage
+git submodule init
+git submodule update
 ```
 
 Then compile the package and source the workspace
