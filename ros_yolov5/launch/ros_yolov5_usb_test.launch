@@ -7,12 +7,17 @@
         <param name="detection_counter_topic" value="/object_detection/counter" />
         <param name="detection_names_topic" value="/object_detection/names" />
         <param name="detection_objects_topic" value="/object_detection/objects" />
-        <param name="source_topic" value="/camera/rgb/image_rect_color" />
+        <param name="source_topic" value="/usb_cam/image_raw" />
         <param name="source_queue" value="1" />
         <param name="as_a_service" value="false" />
         <param name="service_name" value="object_detection/detect_object" />
 
     </node>
+
+    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node">
+    </node>
+
+
     <node name="process_detections" type="process_detections.py" pkg="ros_yolov5"/>
 
 </launch>
