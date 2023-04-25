@@ -49,6 +49,7 @@ class ObjectDetector:
         results = self.model(img, size=640)
 
         detections = results.tolist()[0].xyxy
+        detections = detections[0]
 
         detected_names = []
         detected_objects = []
