@@ -1,5 +1,5 @@
 <launch>
-    <node name="yolov5_object_detector" pkg="ros_yolov5" type="ros_yolov5.py" output="screen">
+    <node name="yolov5_object_detector" pkg="ros_yolov5" type="ros_yolov5_v3.py" output="screen">
 
         <param name="yolo_path" value="$(find ros_yolov5)/yolov5" />
         <param name="weights_path" value="$(find ros_yolov5)/weights/yolov5m.pt" />
@@ -14,10 +14,9 @@
 
     </node>
 
-    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node">
-    </node>
+    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node"/>
 
-
-    <node name="process_detections" type="process_detections.py" pkg="ros_yolov5"/>
+    <arg name="node_start_delay" default="2.0" />
+    <node name="process_detections" pkg="ros_yolov5" type="process_detections.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " />
 
 </launch>
