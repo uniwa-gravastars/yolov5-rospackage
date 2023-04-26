@@ -121,6 +121,8 @@ class ObjectDetector:
         # Convert image message to numpy array
         img = np.frombuffer(msg.data, dtype=np.uint8)
         img = img.reshape((msg.height, msg.width, 3))
+        # Kinect color minor issue. Transforming BGR -> RGB
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
         # Perform object detection on the image
         results = self.model(img, size=640)
@@ -145,11 +147,13 @@ class ObjectDetector:
             detected_names.append(name)
 
         # Publish detected object information
-        detected_objects = detections.tolist()
         message = json.dumps(detected_names)
         self.detection_names_pub.publish(message)
+
+        detected_objects = detections.tolist()
         message = json.dumps(detected_objects)
         self.detection_objects_pub.publish(message)
+
         counter = dict(Counter(detected_names))
         message = json.dumps(counter)
         self.detection_counter_pub.publish(message)

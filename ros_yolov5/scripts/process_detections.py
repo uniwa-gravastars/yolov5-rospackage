@@ -32,19 +32,19 @@ class process_detections:
             self.people_counter_pub.publish(str(0))
             pass
 
-        detections = eval(data.data)
-        objsSet = set(self.objs)
-        exclude_keys = ["person"]
-        no_people_dictSet = set(
-            {k: detections[k] for k in set(list(detections.keys())) - set(exclude_keys)}
-        )
+        # detections = eval(data.data)
+        # objsSet = set(self.objs)
+        # exclude_keys = ["person"]
+        # no_people_dictSet = set(
+        #     {k: detections[k] for k in set(list(detections.keys())) - set(exclude_keys)}
+        # )
 
-        if objsSet.intersection(no_people_dictSet):
-            # if any obj is detected
-            print(objsSet.intersection(no_people_dictSet))
-            print("true")
-        else:
-            print("false")
+        # if objsSet.intersection(no_people_dictSet):
+        #     # if any obj is detected
+        #     print(objsSet.intersection(no_people_dictSet))
+        #     print("true")
+        # else:
+        #     print("false")
 
 
 if __name__ == "__main__":
