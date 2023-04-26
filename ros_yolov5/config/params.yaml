@@ -1,0 +1,8 @@
+/yolov5_object_detector/detection_image_topic: /object_detection/image
+/yolov5_object_detector/detection_counter_topic: /object_detection/counter
+/yolov5_object_detector/detection_names_topic: /object_detection/names
+/yolov5_object_detector/detection_objects_topic: /object_detection/objects
+/yolov5_object_detector/source_topic: /usb_cam/image_raw
+/yolov5_object_detector/source_queue: 1
+/yolov5_object_detector/as_a_service: false
+/yolov5_object_detector/service_name: object_detection/detect_object

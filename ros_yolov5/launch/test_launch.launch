@@ -1,0 +1,23 @@
+<launch>
+    <!-- Delay argument -->
+    <arg name="node_start_delay" default="2.0" />
+
+    <!-- Define arguments for paths -->
+    <arg name="path_to_yolo" default="$(find ros_yolov5)/yolov5" />
+    <arg name="path_to_weights" default="$(find ros_yolov5)/weights/yolov5m.pt" />
+
+    <!-- Open usb_cam_node -->
+    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node"/>
+
+    <!-- Load parameters from params.yaml -->
+    <rosparam command="load" file="$(find ros_yolov5)/config/params.yaml"/>
+
+    <!-- YOLOv5 Ros Node -->
+    <node name="yolov5_object_detector" pkg="ros_yolov5" type="ros_yolov5_v3.py" output="screen">
+        <param name="yolo_path" value="$(arg path_to_yolo)" />
+        <param name="weights_path" value="$(arg path_to_weights)" />
+    </node>
+
+    <!-- Node to process the object detection results with delay-->
+    <node name="process_detections" pkg="ros_yolov5" type="process_detections.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " />
+</launch>
